@@ -7,7 +7,7 @@ namespace LoginExampleServer.Models {
 public class User {
     [Key]
     [Required]
-    [JsonPropertyName("Id")]
+    [JsonPropertyName("userId")]
     public int Id { get; set; }
     [Required]
     [NotNull]

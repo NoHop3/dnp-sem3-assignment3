@@ -7,17 +7,17 @@ namespace LoginExampleServer.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Job",
+                name: "Jobs",
                 columns: table => new
                 {
-                    JobId = table.Column<int>(type: "INTEGER", nullable: false)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     JobTitle = table.Column<string>(type: "TEXT", nullable: true),
                     Salary = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Job", x => x.JobId);
+                    table.PrimaryKey("PK_Jobs", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -45,7 +45,7 @@ namespace LoginExampleServer.Migrations
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    JobTitleJobId = table.Column<int>(type: "INTEGER", nullable: true),
+                    JobId = table.Column<int>(type: "INTEGER", nullable: true),
                     FirstName = table.Column<string>(type: "TEXT", nullable: false),
                     LastName = table.Column<string>(type: "TEXT", nullable: false),
                     HairColor = table.Column<string>(type: "TEXT", nullable: true),
@@ -59,17 +59,17 @@ namespace LoginExampleServer.Migrations
                 {
                     table.PrimaryKey("PK_Adults", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Adults_Job_JobTitleJobId",
-                        column: x => x.JobTitleJobId,
-                        principalTable: "Job",
-                        principalColumn: "JobId",
+                        name: "FK_Adults_Jobs_JobId",
+                        column: x => x.JobId,
+                        principalTable: "Jobs",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Adults_JobTitleJobId",
+                name: "IX_Adults_JobId",
                 table: "Adults",
-                column: "JobTitleJobId");
+                column: "JobId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -81,7 +81,7 @@ namespace LoginExampleServer.Migrations
                 name: "Users");
 
             migrationBuilder.DropTable(
-                name: "Job");
+                name: "Jobs");
         }
     }
 }

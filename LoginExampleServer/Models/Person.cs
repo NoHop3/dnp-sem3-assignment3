@@ -27,16 +27,10 @@ public class Person {
     [DefaultValue("Blue")]
     [JsonPropertyName("EyeColor")]
     public string EyeColor { get; set; }
-    [Required]
-    [NotNull]
     [JsonPropertyName("Age")]
     public int Age { get; set; }
-    [Required]
-    [NotNull]
     [JsonPropertyName("Weight")]
     public float Weight { get; set; }
-    [Required]
-    [NotNull]
     [JsonPropertyName("Height")]
     public int Height { get; set; }
 

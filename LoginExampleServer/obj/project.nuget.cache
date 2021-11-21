@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "7Nid+4BLZUUKHJI5ZOZQuTah+XnyNpCACgoq4draWsQDUph/IBCLISn1uRAyhhGRWQEa4BD4Nmr6Uv7YfTFrEQ==",
+  "dgSpecHash": "mS+nIC0Kr0xyDSHXWotwKfkNpEbgztR6jQw0aMv6eFfrcIgFOV/3tGakpzZcZOVH92mxulJeL+JccIHDYjDtng==",
   "success": true,
   "projectFilePath": "C:\\Users\\bird\\RiderProjects\\dnp-sem3-assignment3\\LoginExampleServer\\LoginExampleServer.csproj",
   "expectedPackageFiles": [
@@ -15,6 +15,7 @@
     "C:\\Users\\bird\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\5.0.12\\microsoft.entityframeworkcore.relational.5.0.12.nupkg.sha512",
     "C:\\Users\\bird\\.nuget\\packages\\microsoft.entityframeworkcore.sqlite\\5.0.12\\microsoft.entityframeworkcore.sqlite.5.0.12.nupkg.sha512",
     "C:\\Users\\bird\\.nuget\\packages\\microsoft.entityframeworkcore.sqlite.core\\5.0.12\\microsoft.entityframeworkcore.sqlite.core.5.0.12.nupkg.sha512",
+    "C:\\Users\\bird\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\5.0.12\\microsoft.entityframeworkcore.tools.5.0.12.nupkg.sha512",
     "C:\\Users\\bird\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\bird\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\5.0.0\\microsoft.extensions.caching.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\bird\\.nuget\\packages\\microsoft.extensions.caching.memory\\5.0.0\\microsoft.extensions.caching.memory.5.0.0.nupkg.sha512",

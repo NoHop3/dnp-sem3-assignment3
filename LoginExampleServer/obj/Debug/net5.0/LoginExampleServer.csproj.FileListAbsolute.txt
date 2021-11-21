@@ -88,3 +88,4 @@ C:\Users\bird\RiderProjects\dnp-sem3-assignment3\LoginExampleServer\bin\Debug\ne
 C:\Users\bird\RiderProjects\dnp-sem3-assignment3\LoginExampleServer\bin\Debug\net5.0\runtimes\win-arm64\native\e_sqlite3.dll
 C:\Users\bird\RiderProjects\dnp-sem3-assignment3\LoginExampleServer\bin\Debug\net5.0\runtimes\win-x64\native\e_sqlite3.dll
 C:\Users\bird\RiderProjects\dnp-sem3-assignment3\LoginExampleServer\bin\Debug\net5.0\runtimes\win-x86\native\e_sqlite3.dll
+C:\Users\bird\RiderProjects\dnp-sem3-assignment3\LoginExampleServer\bin\Debug\net5.0\jobs.json

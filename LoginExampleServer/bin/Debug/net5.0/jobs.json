@@ -1,0 +1,87 @@
+[
+  {
+    "JobId": 1,
+    "JobTitle": "Mascot",
+    "Salary": 99821
+  },
+  {
+    "JobId": 2,
+    "JobTitle": "Front End Dev",
+    "Salary": 10000
+  },
+  {
+    "JobId": 3,
+    "JobTitle": "Business Development Manager",
+    "Salary": 71456
+  },
+  {
+    "JobId": 4,
+    "JobTitle": "Skin Care Specialist",
+    "Salary": 20545
+  },
+  {
+    "JobId": 5,
+    "JobTitle": "Call Center Agent",
+    "Salary": 20308
+  },
+  {
+    "JobId": 6,
+    "JobTitle": "Vice Principal",
+    "Salary": 72901
+  },
+  {
+    "JobId": 7,
+    "JobTitle": "Teacher",
+    "Salary": 91588
+  },
+  {
+    "JobId": 8,
+    "JobTitle": "Service Advisor",
+    "Salary": 72532
+  },
+  {
+    "JobId": 9,
+    "JobTitle": "Janitor",
+    "Salary": 61437
+  },
+  {
+    "JobId": 10,
+    "JobTitle": "Writer",
+    "Salary": 63392
+  },
+  {
+    "JobId": 11,
+    "JobTitle": "Casino Host",
+    "Salary": 35445
+  },
+  {
+    "JobId": 12,
+    "JobTitle": "Nurse",
+    "Salary": 36813
+  },
+  {
+    "JobId": 13,
+    "JobTitle": "Web Administrator",
+    "Salary": 44759
+  },
+  {
+    "JobId": 14,
+    "JobTitle": "Science Teacher",
+    "Salary": 55346
+  },
+  {
+    "JobId": 15,
+    "JobTitle": "Call Center Agent",
+    "Salary": 20308
+  },
+  {
+    "JobId": 16,
+    "JobTitle": "Office Clerk",
+    "Salary": 15000
+  },
+  {
+    "JobId": 17,
+    "JobTitle": "Unemployed",
+    "Salary": 0
+  }
+]

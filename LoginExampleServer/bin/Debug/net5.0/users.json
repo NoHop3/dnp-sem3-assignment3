@@ -1,6 +1,6 @@
 [
   {
-    "Id": 0,
+    "userId": 1,
     "UserName": "Troels",
     "Domain": "via.dk",
     "City": "Horsens",
@@ -10,7 +10,7 @@
     "Password": "123456"
   },
   {
-    "Id": 1,
+    "userId": 2,
     "UserName": "Jakob",
     "Domain": "hotmail.com",
     "City": "Aarhus",
@@ -20,7 +20,7 @@
     "Password": "123456"
   },
   {
-    "Id": 2,
+    "userId": 3,
     "UserName": "Kasper",
     "Domain": "via.com",
     "City": "Vejle",
@@ -30,7 +30,7 @@
     "Password": "123456"
   },
   {
-    "Id": 3,
+    "userId": 4,
     "UserName": "string",
     "Domain": "string",
     "City": "string",
@@ -40,7 +40,7 @@
     "Password": "string"
   },
   {
-    "Id": 4,
+    "userId": 5,
     "UserName": "Stefan",
     "Domain": "viauc@dk",
     "City": "Horsens",
@@ -50,7 +50,7 @@
     "Password": "12345"
   },
   {
-    "Id": 5,
+    "userId": 6,
     "UserName": "Stef",
     "Domain": "viauc@dk",
     "City": "Horsens",
@@ -60,7 +60,7 @@
     "Password": "123456"
   },
   {
-    "Id": 6,
+    "userId": 7,
     "UserName": "Stefchp",
     "Domain": "via@dk",
     "City": "Vejle",

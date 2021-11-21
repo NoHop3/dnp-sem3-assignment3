@@ -10,44 +10,66 @@ using Microsoft.EntityFrameworkCore;
 
 namespace LoginExampleServer.Data.Impl
 {
-    public class DbSeeder : IUserService, IAdultService
+    public class DbSeeder : IUserService, IAdultService, IJobsService
     {
         private AdultDBContext dbContext;
         public IList<Adult> AdultsList { get; private set; }
         public IList<User> UsersList { get; private set; }
+        public IList<Job> JobsList { get; private set; }
         private readonly string adultsFile = "adults.json";
         private readonly string usersFile = "users.json";
+        private readonly string jobsFile = "jobs.json";
 
         public DbSeeder()
         {
             dbContext = new AdultDBContext();
             Seed();
         }
-        
+
         public void Seed()
         {
-            
-            Console.WriteLine("Inserting adults..");
             AdultsList = File.Exists(adultsFile) ? ReadData<Adult>(adultsFile) : new List<Adult>();
-            AddAdults();
-            Console.WriteLine("Done!");
-            Console.WriteLine("Inserting users..");
             UsersList = File.Exists(usersFile) ? ReadData<User>(usersFile) : new List<User>();
-            AddUsers();
-            Console.WriteLine("Done!");
-            Console.WriteLine("Inserting jobs...");
-            //AddJobs(Adults);
-            Console.WriteLine("Done");
+            JobsList = File.Exists(jobsFile) ? ReadData<Job>(jobsFile) : new List<Job>();
+
+            try
+            {
+                Console.WriteLine("Inserting adults...");
+                AddAdults();
+                Console.WriteLine("Done!");
+
+                Console.WriteLine("Inserting users..");
+                AddUsers();
+                Console.WriteLine("Done!");
+
+                Console.WriteLine("Inserting jobs...");
+                AddJobs();
+                Console.WriteLine("Done");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
 
         private void AddAdults()
         {
             foreach (Adult adult in AdultsList)
             {
-
-                    dbContext.Adults.Add(adult);
-                    dbContext.Entry(adult).State = EntityState.Added;
-                    dbContext.SaveChanges();
+                try
+                {
+                    if (!dbContext.Adults.Contains(adult))
+                    {
+                        dbContext.Adults.Add(adult);
+                        dbContext.Entry(adult).State = EntityState.Added;
+                        dbContext.SaveChanges();
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                    Console.WriteLine(e.InnerException.Message);
+                }
             }
         }
 
@@ -55,20 +77,32 @@ namespace LoginExampleServer.Data.Impl
         {
             foreach (User user in UsersList)
             {
-                dbContext.Users.Add(user);
-
-                dbContext.Entry(user).State = EntityState.Added;
-                dbContext.SaveChanges();
+                try
+                {
+                    if (!dbContext.Users.Contains(user))
+                    {
+                        dbContext.Users.Add(user);
+                        dbContext.Entry(user).State = EntityState.Added;
+                        dbContext.SaveChanges();
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.InnerException.Message);
+                }
             }
         }
 
-        private void AddJobs(IList<Adult> adults)
+        private void AddJobs()
         {
-            foreach (Adult adult in adults)
+            foreach (Job job in JobsList)
             {
-
-               // dbContext.Jobs.Add(adult.JobTitle);
-                //dbContext.SaveChanges();
+                if (!dbContext.Jobs.Contains(job))
+                {
+                    dbContext.Jobs.Add(job);
+                    dbContext.Entry(job).State = EntityState.Added;
+                    dbContext.SaveChanges();
+                }
             }
         }
 
@@ -79,20 +113,59 @@ namespace LoginExampleServer.Data.Impl
                 return JsonSerializer.Deserialize<List<T>>(jsonReader.ReadToEnd());
             }
         }
+
         public async Task<IList<Adult>> GetAdultsAsync()
         {
-            List<Adult> temp = new List<Adult>(AdultsList).OrderBy(adult => adult.Id).ToList();
+            List<Adult> temp = new List<Adult>(dbContext.Adults).OrderBy(adult => adult.Id).ToList();
             return temp;
         }
 
         public async Task<IList<User>> GetUsersAsync()
         {
-            List<User> temp = new List<User>(UsersList);
+            List<User> temp = new List<User>(dbContext.Users).OrderBy(user => user.Id).ToList();
             return temp;
         }
+
+        public async Task<IList<Job>> GetJobsAsync()
+        {
+            List<Job> temp = new List<Job>(dbContext.Jobs).OrderBy(job => job.Id).ToList();
+            return temp;
+        }
+
+        public async Task AddJobAsync(Job job)
+        {
+            int max;
+            try
+            {
+                foreach (var job1 in dbContext.Jobs)
+                {
+                    if (job.Id == job1.Id)
+                    {
+                        max = dbContext.Jobs.Max(job => job.Id);
+                        job.Id = (++max);
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+
+            dbContext.Jobs.Add(job);
+            await dbContext.SaveChangesAsync();
+        }
+
+        public async Task RemoveJobAsync(int jobId)
+        {
+            Job jobToRemove = dbContext.Jobs.First(job1 => job1.Id == jobId);
+            dbContext.Jobs.Remove(jobToRemove);
+            await dbContext.SaveChangesAsync();
+        }
+
         public async Task<User> ValidateUserAsync(string userName, string password)
         {
-            User first = UsersList.FirstOrDefault(user => user.UserName.Equals(userName) && user.Password.Equals(password));
+            User first =
+                dbContext.Users.FirstOrDefault(user => user.UserName.Equals(userName) && user.Password.Equals(password));
             if (first == null)
             {
                 throw new Exception("User not found");
@@ -111,11 +184,11 @@ namespace LoginExampleServer.Data.Impl
             int max;
             try
             {
-                foreach (var user1 in UsersList)
+                foreach (var user1 in dbContext.Users)
                 {
                     if (user.Id == user1.Id)
                     {
-                        max = UsersList.Max(adult => adult.Id);
+                        max = dbContext.Users.Max(adult => adult.Id);
                         user.Id = (++max);
                     }
                 }
@@ -125,7 +198,7 @@ namespace LoginExampleServer.Data.Impl
                 Console.WriteLine(e);
             }
 
-            UsersList.Add(user);
+            dbContext.Users.Add(user);
             await dbContext.SaveChangesAsync();
         }
 
@@ -134,11 +207,11 @@ namespace LoginExampleServer.Data.Impl
             int max;
             try
             {
-                foreach (var adult1 in AdultsList)
+                foreach (var adult1 in dbContext.Adults)
                 {
                     if (adult.Id == adult1.Id)
                     {
-                        max = AdultsList.Max(adult => adult.Id);
+                        max = dbContext.Adults.Max(adultA => adultA.Id);
                         adult.Id = (++max);
                     }
                 }
@@ -148,20 +221,20 @@ namespace LoginExampleServer.Data.Impl
                 Console.WriteLine(e);
             }
 
-            AdultsList.Add(adult);
-             await dbContext.SaveChangesAsync();
+            dbContext.Adults.Add(adult);
+            await dbContext.SaveChangesAsync();
         }
 
         public async Task RemovePersonAsync(int adultId)
         {
-            Adult adultToRemove = AdultsList.First(adult1 => adult1.Id == adultId);
-            AdultsList.Remove(adultToRemove);
+            Adult adultToRemove = dbContext.Adults.First(adult1 => adult1.Id == adultId);
+            dbContext.Adults.Remove(adultToRemove);
             await dbContext.SaveChangesAsync();
         }
 
         public async Task<Adult> GetAdultAsync(int id)
         {
-            return AdultsList.FirstOrDefault(adult => adult.Id == id);
+            return dbContext.Adults.FirstOrDefault(adult => adult.Id == id);
         }
     }
 }

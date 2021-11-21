@@ -38,7 +38,7 @@ namespace LoginExampleServer.Migrations
                     b.Property<int>("Height")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int?>("JobTitleJobId")
+                    b.Property<int?>("JobId")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("LastName")
@@ -53,14 +53,14 @@ namespace LoginExampleServer.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("JobTitleJobId");
+                    b.HasIndex("JobId");
 
                     b.ToTable("Adults");
                 });
 
             modelBuilder.Entity("LoginExampleServer.Models.Job", b =>
                 {
-                    b.Property<int>("JobId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
@@ -70,9 +70,9 @@ namespace LoginExampleServer.Migrations
                     b.Property<int>("Salary")
                         .HasColumnType("INTEGER");
 
-                    b.HasKey("JobId");
+                    b.HasKey("Id");
 
-                    b.ToTable("Job");
+                    b.ToTable("Jobs");
                 });
 
             modelBuilder.Entity("LoginExampleServer.Models.User", b =>
@@ -115,11 +115,16 @@ namespace LoginExampleServer.Migrations
 
             modelBuilder.Entity("LoginExampleServer.Models.Adult", b =>
                 {
-                    b.HasOne("LoginExampleServer.Models.Job", "JobTitle")
-                        .WithMany()
-                        .HasForeignKey("JobTitleJobId");
+                    b.HasOne("LoginExampleServer.Models.Job", "Job")
+                        .WithMany("Adults")
+                        .HasForeignKey("JobId");
 
-                    b.Navigation("JobTitle");
+                    b.Navigation("Job");
+                });
+
+            modelBuilder.Entity("LoginExampleServer.Models.Job", b =>
+                {
+                    b.Navigation("Adults");
                 });
 #pragma warning restore 612, 618
         }
