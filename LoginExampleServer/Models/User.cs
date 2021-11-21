@@ -5,6 +5,7 @@ using System.Text.Json.Serialization;
 
 namespace LoginExampleServer.Models {
 public class User {
+    [Key]
     [Required]
     [JsonPropertyName("Id")]
     public int Id { get; set; }

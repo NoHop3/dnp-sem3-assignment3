@@ -29,8 +29,8 @@ namespace LoginExampleServer
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddSingleton<IAdultService, AdultData>();
-            services.AddSingleton<IUserService, AdultData>();
+            services.AddSingleton<IAdultService, DbSeeder>();
+            services.AddSingleton<IUserService, DbSeeder>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo {Title = "LoginExampleServer", Version = "v1"});

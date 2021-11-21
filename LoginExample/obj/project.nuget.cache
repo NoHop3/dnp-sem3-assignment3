@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HjUnXYbpb3wbJhsohSwhD6wWOdG3sAtXv/rM2RdaWSGrCt510zVmZb6xc5pQ6Sb3sCKIHhWofyHfDL0CZDwQVQ==",
+  "dgSpecHash": "o6YDJAGyjmJRfMcCx13NLEjqwT1Smg3cT/W0AsZpYGAM8+pJTWMxbsvGBty6AyD4dpQNi5DIxfFligC8wx7gug==",
   "success": true,
-  "projectFilePath": "C:\\Users\\bird\\RiderProjects\\Razor_intro_ex1\\LoginExample\\LoginExample.csproj",
+  "projectFilePath": "C:\\Users\\bird\\RiderProjects\\dnp-sem3-assignment3\\LoginExample\\LoginExample.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

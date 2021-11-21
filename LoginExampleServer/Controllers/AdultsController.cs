@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using LoginExampleServer.Data;
-using LoginExampleServer.Data.Impl;
 using LoginExampleServer.Models;
 using Microsoft.AspNetCore.Mvc;
 

@@ -16,6 +16,21 @@
   },
   {
     "JobTitle": {
+      "JobTitle": "Front End Dev",
+      "Salary": 10000
+    },
+    "Id": 1,
+    "FirstName": "Stefan",
+    "LastName": "Georgiev",
+    "HairColor": "Dark Brown",
+    "EyeColor": "Colourful",
+    "Age": 21,
+    "Weight": 75,
+    "Height": 180,
+    "Sex": "M"
+  },
+  {
+    "JobTitle": {
       "JobTitle": "Business Development Manager",
       "Salary": 71456
     },
@@ -219,21 +234,6 @@
     "Age": 17,
     "Weight": 50,
     "Height": 181,
-    "Sex": "M"
-  },
-  {
-    "JobTitle": {
-      "JobTitle": "Front End Dev",
-      "Salary": 10000
-    },
-    "Id": 1,
-    "FirstName": "Stefan",
-    "LastName": "Georgiev",
-    "HairColor": "Dark Brown",
-    "EyeColor": "Colourful",
-    "Age": 21,
-    "Weight": 75,
-    "Height": 180,
     "Sex": "M"
   }
 ]

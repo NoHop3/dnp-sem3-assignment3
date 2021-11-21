@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\bird\\RiderProjects\\Razor_intro_ex1\\LoginExample\\LoginExample.csproj": {}
+    "C:\\Users\\bird\\RiderProjects\\dnp-sem3-assignment3\\LoginExample\\LoginExample.csproj": {}
   },
   "projects": {
-    "C:\\Users\\bird\\RiderProjects\\Razor_intro_ex1\\LoginExample\\LoginExample.csproj": {
+    "C:\\Users\\bird\\RiderProjects\\dnp-sem3-assignment3\\LoginExample\\LoginExample.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bird\\RiderProjects\\Razor_intro_ex1\\LoginExample\\LoginExample.csproj",
+        "projectUniqueName": "C:\\Users\\bird\\RiderProjects\\dnp-sem3-assignment3\\LoginExample\\LoginExample.csproj",
         "projectName": "LoginExample",
-        "projectPath": "C:\\Users\\bird\\RiderProjects\\Razor_intro_ex1\\LoginExample\\LoginExample.csproj",
+        "projectPath": "C:\\Users\\bird\\RiderProjects\\dnp-sem3-assignment3\\LoginExample\\LoginExample.csproj",
         "packagesPath": "C:\\Users\\bird\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bird\\RiderProjects\\Razor_intro_ex1\\LoginExample\\obj\\",
+        "outputPath": "C:\\Users\\bird\\RiderProjects\\dnp-sem3-assignment3\\LoginExample\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\bird\\AppData\\Roaming\\NuGet\\NuGet.Config"

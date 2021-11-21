@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\bird\\RiderProjects\\Razor_intro_ex1\\LoginExampleServer\\LoginExampleServer.csproj": {}
+    "C:\\Users\\bird\\RiderProjects\\dnp-sem3-assignment3\\LoginExampleServer\\LoginExampleServer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\bird\\RiderProjects\\Razor_intro_ex1\\LoginExampleServer\\LoginExampleServer.csproj": {
+    "C:\\Users\\bird\\RiderProjects\\dnp-sem3-assignment3\\LoginExampleServer\\LoginExampleServer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bird\\RiderProjects\\Razor_intro_ex1\\LoginExampleServer\\LoginExampleServer.csproj",
+        "projectUniqueName": "C:\\Users\\bird\\RiderProjects\\dnp-sem3-assignment3\\LoginExampleServer\\LoginExampleServer.csproj",
         "projectName": "LoginExampleServer",
-        "projectPath": "C:\\Users\\bird\\RiderProjects\\Razor_intro_ex1\\LoginExampleServer\\LoginExampleServer.csproj",
+        "projectPath": "C:\\Users\\bird\\RiderProjects\\dnp-sem3-assignment3\\LoginExampleServer\\LoginExampleServer.csproj",
         "packagesPath": "C:\\Users\\bird\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bird\\RiderProjects\\Razor_intro_ex1\\LoginExampleServer\\obj\\",
+        "outputPath": "C:\\Users\\bird\\RiderProjects\\dnp-sem3-assignment3\\LoginExampleServer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\bird\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -38,6 +38,20 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.12, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.12, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[5.0.12, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[5.6.3, )"
