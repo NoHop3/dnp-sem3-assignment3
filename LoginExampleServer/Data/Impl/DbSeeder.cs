@@ -157,7 +157,7 @@ namespace LoginExampleServer.Data.Impl
 
         public async Task RemoveJobAsync(int jobId)
         {
-            Job jobToRemove = dbContext.Jobs.First(job1 => job1.Id == jobId);
+            Job jobToRemove = dbContext.Jobs.Where(job1 => job1.Id == jobId).Include(j => j.Adults).First();
             dbContext.Jobs.Remove(jobToRemove);
             await dbContext.SaveChangesAsync();
         }

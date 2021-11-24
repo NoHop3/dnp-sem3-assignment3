@@ -1,11 +1,9 @@
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Diagnostics.CodeAnalysis;
 using System.Text.Json.Serialization;
 
-namespace LoginExampleServer.Models {
-public class Adult : Person {
-    [JsonPropertyName("Job")]
-    public Job Job { get; set; }
-}
+namespace LoginExampleServer.Models
+{
+    public class Adult : Person
+    {
+        [JsonPropertyName("Job")] public Job Job { get; set; }
+    }
 }
